@@ -46,8 +46,7 @@ function Navbar({ user, onLogout, showAllNavbar, isDarkMode, themeMode, onDestro
       <div className="container-fluid p-0">
         {showAllNavbar ?
           <>
-            <a className='p-1' onClick={toggleTheme} href="/"> <Logo />test </a>
-            <a href="" onClick={handleSettings}>mjmm</a>
+            <a className='p-1' href="/"> <Logo /> </a>
             <Dropdown as="div" className="nav-item nav-link btn btn-link ">
               <Dropdown.Toggle className='pl-0' variant="none" id="dropdown-basic" style={{
                 boxShadow: 'none',

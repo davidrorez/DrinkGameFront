@@ -62,6 +62,8 @@
 .logo-svg {
   width: 100px;
   height: 38px;
+  margin-top: 0; /* Elimina el margen superior */
+  padding: 0; /* Elimina el relleno */
 }
 
 @media screen and (max-width: 768px) {

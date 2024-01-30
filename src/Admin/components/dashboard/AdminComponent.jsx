@@ -1,4 +1,5 @@
 import React, { useState, useCallback } from "react";
+import Logo from '../../../img/logoF.png';
 
 function AdminComponent({
   user,
@@ -35,17 +36,18 @@ function AdminComponent({
         className={`flex flex-col h-screen bg-${isDarkMode ? "dark" : "white"}`}
       >
         <div
-          className={`bg-${isDarkMode ? "dark" : "white"} text-${
-            isDarkMode ? "dark" : "white"
-          } shadow w-full p-2 flex items-center justify-between`}
+          className={`bg-${isDarkMode ? "dark" : "white"} text-${isDarkMode ? "dark" : "white"
+            } shadow w-full p-2 flex items-center justify-between`}
         >
           <div className="flex items-center">
-            <div className="flex items-center">
-              <img
-                src="https://www.emprenderconactitud.com/img/POC%20WCS%20(1).png"
-                alt="Logo"
-                className="w-28 h-18 mr-2"
-              />
+            <div className="flex items-center h-12 w-20 ml-2 mr-2">
+              <a href="/admin">
+                <img
+                  src={Logo}
+                  alt="Logo"
+                  className="w-28 h-18 mr-2"
+                />
+              </a>
             </div>
             <div className="flex items-center ">
               <button id="menuBtn" onClick={handleMenuToggle}>
@@ -61,11 +63,10 @@ function AdminComponent({
             <div className={`text-${isDarkMode ? "white" : "dark"} pr-2`}>
               <button
                 onClick={toggleTheme}
-                className={`rounded-full ${
-                  isDarkMode
+                className={`rounded-full ${isDarkMode
                     ? "text-gray hover:bg-gray-700"
                     : "text-gray-700 hover:bg-gray-100"
-                }`}
+                  }`}
               >
                 {isDarkMode ? (
                   <svg
@@ -116,9 +117,8 @@ function AdminComponent({
           id="wrapper"
         >
           <div
-            className={`w-full md:w-60 md:h-50 flex flex-col bg-${
-              isDarkMode ? "dark" : "white"
-            } ${isMenuOpen ? "" : "md:flex hidden "}`}
+            className={`w-full md:w-60 md:h-50 flex flex-col bg-${isDarkMode ? "dark" : "white"
+              } ${isMenuOpen ? "" : "md:flex hidden "}`}
             id="sidebar-wrapper"
           >
             <nav className={`bg-${isDarkMode ? "dark" : "white"}`}>
@@ -168,9 +168,8 @@ function AdminComponent({
             </a>
           </div>
           <div
-            className={`flex-1 p-4 w-full md:w-1/2 bg-${
-              isDarkMode ? "dark" : "white"
-            }`}
+            className={`flex-1 p-4 w-full md:w-1/2 bg-${isDarkMode ? "dark" : "white"
+              }`}
           >
             <div className="relative max-w-md w-full"></div>
             <h1 className={`text-${isDarkMode ? "white" : "dark"}`}>
@@ -178,9 +177,8 @@ function AdminComponent({
             </h1>
             <div className="mt-8 flex flex-wrap space-x-0 space-y-2 md:space-x-4 md:space-y-0">
               <div
-                className={`flex-1 bg-${
-                  isDarkMode ? "dark" : "white"
-                } p-4 shadow rounded-lg md:w-1/2`}
+                className={`flex-1 bg-${isDarkMode ? "dark" : "white"
+                  } p-4 shadow rounded-lg md:w-1/2`}
               >
                 <h2 className="text-gray-500 text-lg font-semibold pb-1">
                   Usuarios
@@ -199,9 +197,8 @@ function AdminComponent({
                 </div>
               </div>
               <div
-                className={`flex-1 bg-${
-                  isDarkMode ? "dark" : "white"
-                } p-4 shadow rounded-lg md:w-1/2`}
+                className={`flex-1 bg-${isDarkMode ? "dark" : "white"
+                  } p-4 shadow rounded-lg md:w-1/2`}
               >
                 <h2 className="text-gray-500 text-lg font-semibold pb-1">
                   Comercios
@@ -224,7 +221,7 @@ function AdminComponent({
             {/* HACER LA LOGICA DE MOSTRAR LA TABLA COMPLETA EN EL BOTON DE VER MAS 
             CON EL USE STATE DE ACTIVE TAB */}
             <Admins />
-            <Players/>
+            <Players />
 
 
           </div>

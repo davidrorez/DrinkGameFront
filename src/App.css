@@ -1,0 +1,148 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+.bg-color {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hover-white, .hover-dark {
+  transition: color 0.3s ease;
+}
+
+.hover-white {
+  color: #f8f9fa;
+}
+
+.hover-white:hover {
+  color: #cacaca;
+}
+
+.hover-dark {
+  color: rgb(33, 37, 41);
+}
+
+.hover-dark:hover {
+  color: rgb(58, 65, 71);
+}
+
+.wheel-container {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .wheel-container {
+    width: 100%;
+    margin: 0 auto; 
+  }
+  
+  .wheel {
+    width: 100%; 
+    max-width: 445px;
+    height: 100vw;
+    max-height: 445px;
+  }
+
+  .div-mb {
+    display:inline-block;
+    padding:0px;
+    margin-bottom:-20px;
+  }
+
+  .nav-pt {
+    padding-top: 0px;
+  }
+}
+
+.logo-svg {
+  width: 100px;
+  height: 38px;
+}
+
+@media screen and (max-width: 768px) {
+  .logo-svg {
+    width: 50px;
+    height: 50px;
+    margin-left: 25px;
+  }
+}
+
+.dropdown-toggle::after {
+  display: none !important; 
+}
+
+.hide-toggle-background .dropdown-toggle::before {
+  display: none;
+}
+
+/*sidebar*/ 
+.primary-text {
+  color: #1c3845;
+}
+
+.second-text {
+  color: #bbbec5;
+}
+
+.primary-bg {
+  background-color: #00719d;
+}
+
+.secondary-bg {
+  background-color: #c1efde;
+}
+
+.rounded-full {
+  border-radius: 100%;
+}
+
+.bg-sidebar {
+
+  background-color: #1c3845;
+}
+
+
+#sidebar-wrapper {
+  min-height: 100vh;
+  margin-left: -15rem;
+  -webkit-transition: margin 0.25s ease-out;
+  -moz-transition: margin 0.25s ease-out;
+  -o-transition: margin 0.25s ease-out;
+  transition: margin 0.25s ease-out;
+}
+
+#sidebar-wrapper .sidebar-heading {
+  padding: 0.875rem 1.25rem;
+  font-size: 1.2rem;
+}
+
+#sidebar-wrapper .list-group {
+  width: 15rem;
+}
+
+#page-content-wrapper {
+  min-width: 100vw;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+  margin-left: 0;
+}
+
+#menu-toggle {
+  cursor: pointer;
+}
+
+.list-group-item {
+  border: none;
+  padding: 20px 30px;
+}
+
+input:checked ~ .dot {
+  transform: translateX(100%);
+  /* background-color: #132b50; */
+}

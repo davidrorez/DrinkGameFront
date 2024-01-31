@@ -9,20 +9,26 @@ import Navbar from "./commons/Navbar";
 import Challenge from "./Game/pages/Challenge";
 import "./App.css";
 
+let exportDarkMode = true;
+
 function App() {
   const storedUser = localStorage.getItem("user");
   const storedPlayers = localStorage.getItem("players");
-  const storedThemeMode = localStorage.getItem("themeMode");
+  const storedTheme = localStorage.getItem("theme");
   const [user, setUser] = useState(storedUser ? JSON.parse(storedUser) : null);
   const [players, setPlayers] = useState(
     storedPlayers ? JSON.parse(storedPlayers) : null
   );
   const [showAllNavbar, setShowAllNavbar] = useState(null);
-  const [isDarkMode, setIsDarkMode] = useState(true);
+  const [isDarkMode, setIsDarkMode] = useState(storedTheme === 'dark');
+  exportDarkMode = isDarkMode;
+
+  useEffect(() => {
+    localStorage.setItem("theme", isDarkMode ? 'dark' : 'light');
+  }, [isDarkMode]);
 
   const themeMode = () => {
     setIsDarkMode(prevMode => !prevMode);
-    localStorage.theme = isDarkMode ? 'light' : 'dark';
   }
 
   useEffect(() => {
@@ -111,5 +117,10 @@ function App() {
     </Router>
   );
 }
+
+export function getIsDarkMode() {
+  return exportDarkMode;
+}
+
 
 export default App;

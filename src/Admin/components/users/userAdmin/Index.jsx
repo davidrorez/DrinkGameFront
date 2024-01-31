@@ -3,7 +3,7 @@ import { getFetch, postFetch, putFetch, deleteFetch } from '../../../../commons/
 import LoadingState from '../../../../commons/LoadingState';
 import List from '../../list/List';
 import Swal from 'sweetalert2';
-import { getIsDarkMode } from '../../../pages/Admin';
+import { getIsDarkMode } from '../../../../App';
 
 export const IndexAdmins = () => {
   const LoadingList = LoadingState(List);

@@ -5,11 +5,7 @@ import { IndexAdmins } from '../components/users/userAdmin/Index';
 import IndexPlayers from '../components/users/userPlayer/Index';
 import IndexChallenges from '../components/challenges/Index';
 
-let theme = false; // Initial color
-
 export function Admin({ user, themeMode, isDarkMode, onLogout }) {
-
-  theme = isDarkMode;
 
   if (!user) {
     return <Navigate to='/login' />
@@ -32,8 +28,4 @@ export function Admin({ user, themeMode, isDarkMode, onLogout }) {
       />
     </div>
   );
-}
-
-export function getIsDarkMode() {
-  return theme;
 }

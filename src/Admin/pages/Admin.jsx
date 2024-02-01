@@ -5,7 +5,7 @@ import { IndexAdmins } from '../components/users/userAdmin/Index';
 import IndexPlayers from '../components/users/userPlayer/Index';
 import IndexChallenges from '../components/challenges/Index';
 
-export function Admin({ user, themeMode, isDarkMode, onLogout }) {
+export function Admin({ user, themeMode, onLogout }) {
 
   if (!user) {
     return <Navigate to='/login' />
@@ -23,7 +23,6 @@ export function Admin({ user, themeMode, isDarkMode, onLogout }) {
         Players={IndexPlayers}
         Admins={IndexAdmins}
         themeMode={themeMode}
-        isDarkMode1={isDarkMode}
         onLogout={onLogout}
       />
     </div>

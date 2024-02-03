@@ -2,6 +2,13 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+
+.bg-test {
+  background-image: linear-gradient(-20deg, #2b5876 0%, #4e4376 100%);
+}
+
+
+
 .bg-color {
   min-height: 100vh;
   width: 100%;
@@ -57,6 +64,10 @@
   .nav-pt {
     padding-top: 0px;
   }
+}
+
+.test {
+  color: (120,119,198,0.3)
 }
 
 .logo-svg {

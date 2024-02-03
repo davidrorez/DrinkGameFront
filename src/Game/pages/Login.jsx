@@ -12,9 +12,7 @@ function Login({ user, setUser, setShowAllNavbar }) {
   }
 
   return (
-    <div className="bg-color">
       <FormLogin setUser={setUser} />
-    </div>
   )
 }
 

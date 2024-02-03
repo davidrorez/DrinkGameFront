@@ -1,20 +1,24 @@
-import React, { useState, useEffect } from 'react';
-import { Wheel } from 'react-custom-roulette';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Button from '@mui/material/Button';
-import { getFetch } from '../../commons/ApiMethods';
+import React, { useState, useEffect } from "react";
+import { Wheel } from "react-custom-roulette";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Button from "@mui/material/Button";
+import { getFetch } from "../../commons/ApiMethods";
 
 function ChallengeCard({ players }) {
   const [mustSpin, setMustSpin] = useState(false);
   const [prizeNumber, setPrizeNumber] = useState(0);
   const [challenges, setChallenges] = useState([]);
   const [isNameVisible, setIsNameVisible] = useState(false);
-  const [selectedChallenge, setSelectedChallenge] = useState('');
-  const defaultOptions = [{ option: 'Todos' }, { option: 'Nadie' }, { option: 'Secreto' }];
-  let selectedPlayer = '';
+  const [selectedChallenge, setSelectedChallenge] = useState("");
+  const defaultOptions = [
+    { option: "Todos" },
+    { option: "Nadie" },
+    { option: "Secreto" },
+  ];
+  let selectedPlayer = "";
 
   useEffect(() => {
-    getFetch('challenge').then((data) => {
+    getFetch("challenge").then((data) => {
       setChallenges(data);
     });
   }, []);
@@ -28,8 +32,9 @@ function ChallengeCard({ players }) {
       setMustSpin(true);
       setIsNameVisible(false);
 
-      const randomChallenge = challenges[Math.floor(Math.random() * challenges.length)];
-      setSelectedChallenge(randomChallenge?.challengecol || '');
+      const randomChallenge =
+        challenges[Math.floor(Math.random() * challenges.length)];
+      setSelectedChallenge(randomChallenge?.challengecol || "");
     }
   };
 
@@ -45,10 +50,10 @@ function ChallengeCard({ players }) {
   return (
     <section
       style={{
-        minHeight: '100vh',
-        display: 'flex',
-        alignItems: 'center',
-        overflow: 'hidden',
+        minHeight: "100vh",
+        display: "flex",
+        alignItems: "center",
+        overflow: "hidden",
       }}
     >
       <div className="container py-5">
@@ -58,12 +63,12 @@ function ChallengeCard({ players }) {
               <Wheel
                 className="wheel"
                 mustStartSpinning={mustSpin}
-                radiusLineColor={'white'}
-                outerBorderWidth={2}
+                radiusLineColor={"white"}
+                outerBorderWidth={0}
                 radiusLineWidth={2}
-                outerBorderColor={''}
-                backgroundColors={['#808e96', '#546871']}
-                textColors={['white']}
+                outerBorderColor={""}
+                backgroundColors={["#111117", "#1f1f2e"]}
+                textColors={["white"]}
                 prizeNumber={prizeNumber}
                 fontSize={30}
                 data={data}
@@ -72,23 +77,27 @@ function ChallengeCard({ players }) {
             </div>
             <div className="d-flex justify-content-center mt-4 div-mb">
               <Button
-                style={{ backgroundColor: '#e24a2b', textTransform: 'none' }}
+                style={{ backgroundColor: "#e24a2b", textTransform: "none" }}
                 onClick={handleSpinClick}
-                variant="contained">Girar
+                variant="contained"
+              >
+                Girar
               </Button>
             </div>
           </div>
           <div className="col-12 col-md-6">
             <div
-              className="card shadow-2-strong m-2 mt-4"
-              style={{ borderRadius: '1rem', backgroundColor: '#0D1D25' }}
+              className="shadow-2-strong m-2 mt-4"
+              style={{ borderRadius: "1rem" }}
             >
-              <div className="card-body p-4 p-md-5 text-center text-white">
+              <div className="p-4 p-md-5 text-center text-white">
                 <h1 className="mb-3">
-                  Reto para{isNameVisible ? " " + selectedPlayer : '...'}
+                  Reto para{isNameVisible ? " " + selectedPlayer : "..."}
                 </h1>
-                <div style={{ marginBottom: '1rem' }}>
-                  {isNameVisible && <h4 className="mb-3">{selectedChallenge}</h4>}
+                <div style={{ marginBottom: "1rem" }}>
+                  {isNameVisible && (
+                    <h4 className="mb-3">{selectedChallenge}</h4>
+                  )}
                 </div>
                 <hr className="my-4 mb-3" />
               </div>

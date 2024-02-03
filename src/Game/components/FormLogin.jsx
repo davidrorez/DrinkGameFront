@@ -61,6 +61,7 @@ function FormLogin({ setUser }) {
   });
 
   return (
+    <section className='bg-color'>
     <ThemeProvider theme={customTheme}>
       <Container component="main" maxWidth="xs" className='mt-5'>
         <CssBaseline />
@@ -112,19 +113,19 @@ function FormLogin({ setUser }) {
               type="submit"
               fullWidth
               variant="contained"
-              sx={{ mt: 3, mb: 2 }}
+              sx={{ mt: 2, mb: 2 }}
             >
               Ingresar
             </Button>
             <Grid container>
               <Grid item xs>
                 <Link href="#" variant="body2">
-                  Olvidaste tu contraseña?
+                  ¿Olvidaste tu contraseña?
                 </Link>
               </Grid>
               <Grid item>
                 <Link href="/registration" variant="body2">
-                  {"No tienes cuenta? Registrate"}
+                  {"¿No tienes cuenta? Registrate."}
                 </Link>
               </Grid>
             </Grid>
@@ -132,64 +133,7 @@ function FormLogin({ setUser }) {
         </Box>
       </Container>
     </ThemeProvider>
-    /*
-    <section style={{ backgroundColor: '#1c3845' }}>
-      <div className="container py-5 h-100 d-flex justify-content-center align-items-center">
-        <div className="col-12 col-md-8 col-lg-6 col-xl-5">
-          <div className="card shadow-2-strong mt-4" style={{ borderRadius: '1rem' }}>
-            <div className="card-body p-5 text-center">
-              <h3 className="mb-3">Inicio de sesión</h3>
-              <div style={{ marginBottom: '1rem' }}>
-                <form onSubmit={handleSubmit}>
-                  <div className="form-outline mb-4">
-                    <label className="form-label" htmlFor="typeEmailX-2">Correo electrónico</label>
-                    <input
-                      type="email"
-                      id="typeEmailX-2"
-                      className="form-control form-control-lg"
-                      placeholder='Correo electrónico'
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      required
-                    />
-                  </div>
-                  <div className="form-outline mb-4">
-                    <label className="form-label" htmlFor="typePasswordX-2">Contraseña</label>
-                    <input
-                      type="password"
-                      id="typePasswordX-2"
-                      className="form-control form-control-lg"
-                      placeholder='Contraseña'
-                      value={password}
-                      onChange={(e) => setPassword(e.target.value)}
-                      required
-                    />
-                    <p style={{ color: 'red', marginBottom: 0 }}>{alertText}</p>
-                  </div>
-
-                  <div className="form-check d-flex justify-content-start mb-4">
-                    <input className="form-check-input" type="checkbox" value="" id="form1Example3" />
-                    <label className="form-check-label ms-2" htmlFor="form1Example3">Recordar contraseña</label>
-                  </div>
-
-                  <button className="btn btn-primary btn-lg btn-block" type="submit">Ingresar</button>
-                </form>
-              </div>
-              <p> No tienes cuenta? <a href="/registration" style={{textDecoration: 'none'}}>Registrate aquí</a> </p>
-              <hr className="my-4 mb-3" />
-              O juega como inivitado: 
-              <button onClick={handleLoginGuest} className="btn btn-success m-1">Jugar</button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <footer className="text-center text-lg-start">
-        <div className="text-center text-white p-3">
-          © 2023 Copyright
-        </div>
-      </footer>
-    </section> 
-    */
+    </section>
   );
 }
 

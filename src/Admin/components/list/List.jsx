@@ -44,7 +44,7 @@ const ListAdmins = ({
         </h3>
         <div className="my-1"></div>
         <div className="bg-gradient-to-r from-cyan-300 to-cyan-500 h-px mb-6"></div>
-        <Table responsive variant={bgColorDark ? 'dark': 'white'} className="text-sm">
+        <Table responsive variant={bgColorDark ? 'dark' : 'white'} className="text-sm">
           <thead>
             <tr className="text-sm leading-normal">
               <th className="py-2 px-4 bg-grey-lightest font-bold uppercase text-sm text-grey-light border-b border-grey-light">
@@ -85,10 +85,12 @@ const ListAdmins = ({
                 <td className="py-2 px-4 border-b border-grey-light">
                   <Button
                     style={{
-                      backgroundColor: "red",
-                      textTransform: "none",
+                      color: 'white',
+                      backgroundColor: email === 'admin@admin.com' ? 'rgba(255, 0, 0, 0.5)' : 'red',
+                      textTransform: 'none',
                     }}
                     variant="contained"
+                    disabled={email === 'admin@admin.com'}
                     onClick={() => handleDelete(id)}
                   >
                     Eliminar
@@ -100,7 +102,7 @@ const ListAdmins = ({
         </Table>
         <div className="text-right mt-4">
           <Button
-          className="bg-cyan-500 hover:bg-cyan-600 text-white font-semibold py-2 px-4"
+            className="bg-cyan-500 hover:bg-cyan-600 text-white font-semibold py-2 px-4"
             style={{
               textTransform: "none",
             }}

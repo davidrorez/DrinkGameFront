@@ -16,6 +16,7 @@ function Navbar({
   isDarkMode,
   themeMode,
   onDestroy,
+  setBgColor
 }) {
   const navigate = useNavigate();
   const Swal = require("sweetalert2");
@@ -37,6 +38,7 @@ function Navbar({
       confirmButtonText: "Salir",
     }).then((result) => {
       if (result.isConfirmed) {
+        setBgColor("bg-default")
         onDestroy();
         navigate("/");
       }

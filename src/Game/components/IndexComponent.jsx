@@ -42,6 +42,20 @@ function IndexComponent({ setPlayers }) {
     }
   };
 
+  const handleSetMode = () => {
+    if (playerList && playerList.length > 1) {
+      setPlayers(playerList)
+      navigate('/mode')
+    } else {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'Ingresa al menos dos jugadores antes de continuar.'
+      });
+    }
+  };
+
+
   /*if (!user) {
     return <Navigate to='/login' />;
   }*/
@@ -90,7 +104,7 @@ function IndexComponent({ setPlayers }) {
           <div className="d-flex justify-content-center">
             <IconButton type="submit"
               className='pt-0 mt-0 hover-white'
-              onClick={handlePlayGame}
+              onClick={handleSetMode}
               style={{ color: 'white' }}>
               <PlayCircleIcon style={{ fontSize: '8.5rem' }} />
             </IconButton>

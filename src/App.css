@@ -2,12 +2,17 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-
-.bg-test {
-  background-image: linear-gradient(-20deg, #2b5876 0%, #4e4376 100%);
+.bg-roulette {
+  --tw-gradient-stops: #FFFB7D 0%, rgba(255,255,255,0) 100%;
+  background-color: #85FFBD;
+  background-image: radial-gradient(ellipse 80% 80% at 50% -20%, var(--tw-gradient-stops));
 }
 
-
+.bg-default {
+  --tw-gradient-stops: rgba(119, 197, 198, 0.3) 0%, rgba(255,255,255,0) 100%;
+  background-color: #21292c;
+  background-image: radial-gradient(ellipse 80% 80% at 50% -20%, var(--tw-gradient-stops));
+}
 
 .bg-color {
   min-height: 100vh;

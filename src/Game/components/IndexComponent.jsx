@@ -68,9 +68,12 @@ function IndexComponent({ setPlayers }) {
     <div className='bg-color'>
       <div className="container py-5 d-flex flex-column justify-content-center align-items-center" style={{ flex: '1 0 auto' }}>
         <div className="col-12 col-md-8 col-lg-6 col-xl-5 mt-5">
-          <h1 className='d-flex justify-content-center text-white mb-4'>¡Ingresa a los jugadores!</h1>
+        <div class="sign">
+            <span class="fast-flicker">J</span>ugado
+            <span class="flicker">r</span>es
+          </div>
           <form onSubmit={handleAddPlayer}>
-            <div className="d-flex justify-content-center input-group mb-3">
+            <div className="d-flex justify-content-center input-group mb-3" style={{marginTop: '10rem'}}>
               <CustomInput
                 playerName={playerName}
                 setErrorMessage={setErrorMessage}

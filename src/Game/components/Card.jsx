@@ -1,5 +1,4 @@
 import * as React from "react";
-import { useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
@@ -31,12 +30,15 @@ export default function MediaControlCard({ setBgColor }) {
               display: "flex",
               marginBottom: "10px",
               backgroundColor:
-                "background-color: #85FFBD; background-image: linear-gradient(45deg, #85FFBD 0%, #FFFB7D 100%);",
+                "background-color: #95f2c8; background-image: linear-gradient(135deg, #95f2c8 0%, #8bec90  100%);",
             }}
           >
             <Box sx={{ display: "flex", flexDirection: "column" }}>
               <CardContent sx={{ flex: "1 0 auto" }}>
-                <Typography component="div" variant="h5">
+                <Typography
+                  component="div"
+                  variant="h5"
+                  color="white">
                   Ruleta
                 </Typography>
               </CardContent>
@@ -44,7 +46,7 @@ export default function MediaControlCard({ setBgColor }) {
             <CardContent style={{ paddingBottom: "0px" }}>
               <Typography
                 variant="subtitle1"
-                color="text.secondary"
+                color="white"
                 component="div"
               >
                 This impressive paella is a perfect party dish and a fun meal to
@@ -52,12 +54,13 @@ export default function MediaControlCard({ setBgColor }) {
               </Typography>
               <Box sx={{ display: "flex", justifyContent: "right" }}>
                 <IconButton
+                  color="white"
                   type="submit"
                   sx={{ margin: "0px" }}
                   onClick={() => handlePlayRoulette()}
                 >
                   <PlayCircleFilledIcon
-                    sx={{ fontSize: "3rem" }}
+                    sx={{ fontSize: "3rem", color: "white" }}
                   ></PlayCircleFilledIcon>
                 </IconButton>
               </Box>
@@ -73,7 +76,10 @@ export default function MediaControlCard({ setBgColor }) {
           >
             <Box sx={{ display: "flex", flexDirection: "column" }}>
               <CardContent sx={{ flex: "1 0 auto" }}>
-                <Typography component="div" variant="h5">
+                <Typography
+                  component="div"
+                  variant="h5"
+                  color="white">
                   Cartas
                 </Typography>
               </CardContent>
@@ -81,7 +87,7 @@ export default function MediaControlCard({ setBgColor }) {
             <CardContent style={{ paddingBottom: "0px" }}>
               <Typography
                 variant="subtitle1"
-                color="text.secondary"
+                color="white"
                 component="div"
               >
                 This impressive paella is a perfect party dish and a fun meal to
@@ -90,7 +96,7 @@ export default function MediaControlCard({ setBgColor }) {
               <Box sx={{ display: "flex", justifyContent: "right" }}>
                 <IconButton type="submit" sx={{ margin: "0px" }}>
                   <PlayCircleFilledIcon
-                    sx={{ fontSize: "3rem" }}
+                    sx={{ fontSize: "3rem", color: "white" }}
                   ></PlayCircleFilledIcon>
                 </IconButton>
               </Box>
@@ -106,7 +112,10 @@ export default function MediaControlCard({ setBgColor }) {
           >
             <Box sx={{ display: "flex", flexDirection: "column" }}>
               <CardContent sx={{ flex: "1 0 auto" }}>
-                <Typography component="div" variant="h5">
+                <Typography
+                  component="div" 
+                  variant="h5"
+                  color="white">
                   Verdad o Reto
                 </Typography>
               </CardContent>
@@ -114,7 +123,7 @@ export default function MediaControlCard({ setBgColor }) {
             <CardContent style={{ paddingBottom: "0px" }}>
               <Typography
                 variant="subtitle1"
-                color="text.secondary"
+                color="white"
                 component="div"
               >
                 This impressive paella is a perfect party dish and a fun meal to
@@ -123,7 +132,7 @@ export default function MediaControlCard({ setBgColor }) {
               <Box sx={{ display: "flex", justifyContent: "right" }}>
                 <IconButton type="submit" sx={{ margin: "0px" }}>
                   <PlayCircleFilledIcon
-                    sx={{ fontSize: "3rem" }}
+                    sx={{ fontSize: "3rem", color: "white" }}
                   ></PlayCircleFilledIcon>
                 </IconButton>
               </Box>

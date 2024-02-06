@@ -51,9 +51,13 @@ function Navbar({ user, onLogout, showAllNavbar, isDarkMode, themeMode, onDestro
               <Dropdown.Toggle className='pl-0' variant="none" id="dropdown-basic" style={{
                 boxShadow: 'none',
               }}>
-                <span className='text-white pt-4'>
-                  {themeMode}
-                </span>
+                <>
+                  {user ?
+                    <span className='text-white pt-4'>
+                      {themeMode}
+                    </span>
+                    : ''}
+                </>
                 <IconButton className='pl-1 pr-0' type="submit" style={{ color: 'white' }}>
                   <ManageAccountsIcon style={{ fontSize: '2rem' }} />
                 </IconButton>

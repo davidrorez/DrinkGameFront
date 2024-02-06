@@ -1,26 +1,26 @@
-import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import '../../App.css';
-import CustomInput from '../components/CustomInput'
-import PersonRemoveIcon from '@mui/icons-material/PersonRemove';
-import { IconButton } from '@mui/material';
-import PlayCircleIcon from '@mui/icons-material/PlayCircle';
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import "../../App.css";
+import CustomInput from "../components/CustomInput";
+import PersonRemoveIcon from "@mui/icons-material/PersonRemove";
+import { IconButton } from "@mui/material";
+import PlayCircleIcon from "@mui/icons-material/PlayCircle";
 
 function IndexComponent({ setPlayers }) {
-  const Swal = require('sweetalert2')
+  const Swal = require("sweetalert2");
   const navigate = useNavigate();
-  const [playerName, setPlayerName] = useState('');
+  const [playerName, setPlayerName] = useState("");
   const [playerList, setPlayerList] = useState([]);
   const [errorMessage, setErrorMessage] = useState(null);
 
   const handleAddPlayer = (e) => {
     e.preventDefault();
-    if (playerName.trim() !== '') {
+    if (playerName.trim() !== "") {
       const newPlayer = { option: playerName };
       setPlayerList([...playerList, newPlayer]);
       setPlayers([...playerList, newPlayer]);
-      setPlayerName('');
-      setErrorMessage('');
+      setPlayerName("");
+      setErrorMessage("");
     }
   };
 
@@ -29,32 +29,18 @@ function IndexComponent({ setPlayers }) {
     setPlayerList(updatedPlayerList);
   };
 
-  const handlePlayGame = () => {
-    if (playerList && playerList.length > 1) {
-      setPlayers(playerList)
-      navigate('/challenge')
-    } else {
-      Swal.fire({
-        icon: 'error',
-        title: 'Error',
-        text: 'Ingresa al menos dos jugadores antes de continuar.'
-      });
-    }
-  };
-
   const handleSetMode = () => {
     if (playerList && playerList.length > 1) {
-      setPlayers(playerList)
-      navigate('/mode')
+      setPlayers(playerList);
+      navigate("/mode");
     } else {
       Swal.fire({
-        icon: 'error',
-        title: 'Error',
-        text: 'Ingresa al menos dos jugadores antes de continuar.'
+        icon: "error",
+        title: "Error",
+        text: "Ingresa al menos dos jugadores antes de continuar.",
       });
     }
   };
-
 
   /*if (!user) {
     return <Navigate to='/login' />;
@@ -65,38 +51,56 @@ function IndexComponent({ setPlayers }) {
   }*/
 
   return (
-    <div className='bg-color'>
-      <div className="container py-5 d-flex flex-column justify-content-center align-items-center" style={{ flex: '1 0 auto' }}>
-        <div className="col-12 col-md-8 col-lg-6 col-xl-5 mt-5">
-        <div class="sign">
+    <div className="bg-color">
+      <div
+        className="container py-5 d-flex flex-column justify-content-center align-items-center"
+        style={{ flex: "1 0 auto" }}
+      >
+        <div className="sign-container">
+                  <div class="sign">
             <span class="fast-flicker">J</span>ugado
             <span class="flicker">r</span>es
           </div>
+          </div>
+        <div className="col-12 col-md-8 col-lg-6 col-xl-5">
           <form onSubmit={handleAddPlayer}>
-            <div className="d-flex justify-content-center input-group mb-3" style={{marginTop: '10rem'}}>
+            <div className="d-flex justify-content-center input-group mb-3">
               <CustomInput
                 playerName={playerName}
                 setErrorMessage={setErrorMessage}
-                setPlayerName={setPlayerName} />
+                setPlayerName={setPlayerName}
+              />
             </div>
           </form>
-          {errorMessage ? <div className='mb-3' style={{ color: 'red' }}>
-            <h6>
-              {errorMessage} <i class="bi bi-exclamation-triangle-fill ml-1"></i>
-            </h6>
-          </div>
-            : null}
+          {errorMessage ? (
+            <div className="mb-3" style={{ color: "red" }}>
+              <h6>
+                {errorMessage}{" "}
+                <i class="bi bi-exclamation-triangle-fill ml-1"></i>
+              </h6>
+            </div>
+          ) : null}
           <div className="row row-cols-1 row-cols-md-2">
             {playerList.map((player, index) => (
               <div key={index} className="col mb-3">
-                <div className="list-group-item card rounded" style={{
-                  padding: '0.5rem',
-                  backgroundColor: 'rgb(48, 90, 110, 0.50)'
-                }}>
-                  <h4 className='text-white mb-2' >{player.option}
-                    <IconButton type="submit"
+                <div
+                  className="list-group-item card rounded"
+                  style={{
+                    padding: "0.5rem",
+                    backgroundColor: "rgb(48, 90, 110, 0.50)",
+                  }}
+                >
+                  <h4 className="text-white mb-2">
+                    {player.option}
+                    <IconButton
+                      type="submit"
                       onClick={() => handleDeletePlayer(index)}
-                      style={{ color: '#ff0000bf', float: 'right', fontSize: '1.2rem' }}>
+                      style={{
+                        color: "#ff0000bf",
+                        float: "right",
+                        fontSize: "1.2rem",
+                      }}
+                    >
                       <PersonRemoveIcon />
                     </IconButton>
                   </h4>
@@ -105,19 +109,19 @@ function IndexComponent({ setPlayers }) {
             ))}
           </div>
           <div className="d-flex justify-content-center">
-            <IconButton type="submit"
-              className='pt-0 mt-0 hover-white'
+            <IconButton
+              type="submit"
+              className="pt-0 mt-0 hover-white"
               onClick={handleSetMode}
-              style={{ color: 'white' }}>
-              <PlayCircleIcon style={{ fontSize: '8.5rem' }} />
+              style={{ color: "white" }}
+            >
+              <PlayCircleIcon style={{ fontSize: "8.5rem" }} />
             </IconButton>
           </div>
         </div>
       </div>
       <footer className="text-center text-lg-start">
-        <div className="text-center text-white p-3">
-          © 2023 Copyright
-        </div>
+        <div className="text-center text-white p-3">© 2023 Copyright</div>
       </footer>
     </div>
   );

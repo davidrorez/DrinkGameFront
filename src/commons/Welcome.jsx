@@ -37,13 +37,15 @@ function Welcome({ setUser }) {
         style={{ flex: "1 0 auto" }}
       >
         <div className="col-12 col-md-8 col-lg-6 col-xl-5">
+          <div className="sign-container">
           <div class="sign">
             <span class="fast-flicker">D</span>rink
             <span class="flicker">G</span>ame
           </div>
+          </div>
           <p
-            className="d-flex justify-content-center text-white"
-            style={{ marginTop: "7rem" }}
+            className="d-flex justify-content-center"
+            style={{ color: "#ffffffcc" }}
           >
             Elige una opción para empezar.
           </p>
@@ -53,7 +55,7 @@ function Welcome({ setUser }) {
                 type="submit"
                 variant="contained"
                 style={{ backgroundColor: "#e24a2b" }}
-                sx={{ m: 2 }}
+                sx={{ m: 3 }}
                 onClick={handleLogin}
               >
                 Iniciar sesión
@@ -68,7 +70,7 @@ function Welcome({ setUser }) {
                   fontSize: "13px",
                   height: "37px",
                 }}
-                sx={{ m: 2 }}
+                sx={{ m: 3 }}
                 onClick={handleLoginGuest}
               >
                 Partida rápida

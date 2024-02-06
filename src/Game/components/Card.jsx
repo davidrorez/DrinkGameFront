@@ -35,20 +35,13 @@ export default function MediaControlCard({ setBgColor }) {
           >
             <Box sx={{ display: "flex", flexDirection: "column" }}>
               <CardContent sx={{ flex: "1 0 auto" }}>
-                <Typography
-                  component="div"
-                  variant="h5"
-                  color="white">
+                <Typography component="div" variant="h5" color="white">
                   Ruleta
                 </Typography>
               </CardContent>
             </Box>
             <CardContent style={{ paddingBottom: "0px" }}>
-              <Typography
-                variant="subtitle1"
-                color="white"
-                component="div"
-              >
+              <Typography variant="subtitle1" color="white" component="div">
                 This impressive paella is a perfect party dish and a fun meal to
                 cook together.
               </Typography>
@@ -76,20 +69,13 @@ export default function MediaControlCard({ setBgColor }) {
           >
             <Box sx={{ display: "flex", flexDirection: "column" }}>
               <CardContent sx={{ flex: "1 0 auto" }}>
-                <Typography
-                  component="div"
-                  variant="h5"
-                  color="white">
+                <Typography component="div" variant="h5" color="white">
                   Cartas
                 </Typography>
               </CardContent>
             </Box>
             <CardContent style={{ paddingBottom: "0px" }}>
-              <Typography
-                variant="subtitle1"
-                color="white"
-                component="div"
-              >
+              <Typography variant="subtitle1" color="white" component="div">
                 This impressive paella is a perfect party dish and a fun meal to
                 cook together.
               </Typography>
@@ -112,20 +98,13 @@ export default function MediaControlCard({ setBgColor }) {
           >
             <Box sx={{ display: "flex", flexDirection: "column" }}>
               <CardContent sx={{ flex: "1 0 auto" }}>
-                <Typography
-                  component="div" 
-                  variant="h5"
-                  color="white">
+                <Typography component="div" variant="h5" color="white">
                   Verdad o Reto
                 </Typography>
               </CardContent>
             </Box>
             <CardContent style={{ paddingBottom: "0px" }}>
-              <Typography
-                variant="subtitle1"
-                color="white"
-                component="div"
-              >
+              <Typography variant="subtitle1" color="white" component="div">
                 This impressive paella is a perfect party dish and a fun meal to
                 cook together.
               </Typography>
